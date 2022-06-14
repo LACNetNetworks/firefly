@@ -2,7 +2,9 @@
 
 pragma solidity >=0.6.0 <0.9.0;
 
-contract Firefly {
+import "./BaseRelayRecipient.sol";
+
+contract Firefly is BaseRelayRecipient{
 
     event BatchPin (
         address author,
@@ -15,7 +17,7 @@ contract Firefly {
     );
 
     function pinBatch(string memory namespace, bytes32 uuids, bytes32 batchHash, string memory payloadRef, bytes32[] memory contexts) public {
-        emit BatchPin(msg.sender, block.timestamp, namespace, uuids, batchHash, payloadRef, contexts);
+        emit BatchPin(_msgSender(), block.timestamp, namespace, uuids, batchHash, payloadRef, contexts);
     }
 
     function networkVersion() public pure returns (uint8) {
