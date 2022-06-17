@@ -1,9 +1,14 @@
+const HDWalletProvider = require("@truffle/hdwallet-provider");
+const privateKey = "<PRIVATE_KEY>";
+const privateKeyProvider = new HDWalletProvider(privateKey, "<PROVIDER>");
+
 module.exports = {
   networks: {
     development: {
-     host: "127.0.0.1",     // Localhost (default: none)
-     port: 7545,            // Standard Ethereum port (default: none)
-     network_id: "*",       // Any network (default: none)
+      provider: privateKeyProvider,
+      network_id: "648530",
+      gasPrice: 0,
+      gas: 1000000	    
     }
   },
   mocha: {
