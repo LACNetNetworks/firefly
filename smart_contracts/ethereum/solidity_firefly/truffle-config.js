@@ -1,12 +1,12 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 const privateKey = "<PRIVATE_KEY>";
-const privateKeyProvider = new HDWalletProvider(privateKey, "<PROVIDER>");
+const privateKeyProvider = new HDWalletProvider(privateKey, "<NODE_IP>");
 
 module.exports = {
   networks: {
     development: {
       provider: privateKeyProvider,
-      network_id: "648530",
+      network_id: "648532",
       gasPrice: 0,
       gas: 1000000	    
     }
